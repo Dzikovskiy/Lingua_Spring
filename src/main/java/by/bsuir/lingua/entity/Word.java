@@ -1,7 +1,6 @@
 package by.bsuir.lingua.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,6 +9,9 @@ import java.util.List;
 @Table(name = "word")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Word {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

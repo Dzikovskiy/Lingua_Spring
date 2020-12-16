@@ -46,6 +46,20 @@
                 ${name}<#else>User Name
             </#if>
         </div>
+        <form action="/word/save" id="word_form" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <div class="box words_form">
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Word" name="word_1" id='word_1' required/>
+                    <label for="word_1" class="form__label words">Word</label>
+                    <input type="input" class="form__field" placeholder="Translation" name="word_2" id='word_2'
+                           required/>
+                    <label for="word_2" class="form__label words">Translation</label>
+                </div>
+                <a onclick="document.getElementById('word_form').submit();" href="javascript:{}" class="search_button">add
+                    word</a>
+            </div>
+        </form>
         <div class="box">
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Search word" name="word" id='word' required/>
