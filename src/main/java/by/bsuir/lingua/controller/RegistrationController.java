@@ -7,23 +7,26 @@ import by.bsuir.lingua.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Controller
 public class RegistrationController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -32,29 +35,40 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model, @RequestParam Map<String, String> form) {
+    public String addUser(User userCredentials, Map<String, Object> model, @RequestParam Map<String, String> form) {
 
-        User userFormDb = userRepository.findByUsername(user.getUsername());
+        User userFormDb = userRepository.findByUsername(userCredentials.getUsername());
         if (userFormDb != null) {
             model.put("message", "User exists!");
             return "registration";
 
         }
 
-        user.setActive(true);
+        User user = User.builder()
+                .active(true)
+                .username(userCredentials.getUsername())
+                .email(userCredentials.getEmail())
+                .password(passwordEncoder.encode(userCredentials.getPassword()))
+                .roles(Set.of(Role.USER))
+                .build();
 
-
-        user.setRoles(Collections.singleton(Role.USER));
-
+//
+//        user.setActive(true);
+//
+//
+//        user.setRoles(Collections.singleton(Role.USER));
+//
         userRepository.save(user);
+
+
         return "redirect:/login";
 
     }
 
     @GetMapping("/logout")
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout"; //You can redirect wherever you want, but generally it's a good practice to show login screen again.
