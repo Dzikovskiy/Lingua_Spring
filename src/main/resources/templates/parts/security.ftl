@@ -6,15 +6,12 @@ known = Session.SPRING_SECURITY_CONTEXT??
     <#assign
     user = Session.SPRING_SECURITY_CONTEXT.authentication.principal
     name = user.getUsername()
-    isTech = user.isTech()
-    isDispatcher = user.isDispatcher()
-    isForeman = user.isForeman()
+    isAdmin = user.isAdmin()
+
     >
 <#else>
     <#assign
     name = ""
-    isTech = false
-    isDispatcher= false
-    isForeman  = false
+    isAdmin = false
     >
 </#if>

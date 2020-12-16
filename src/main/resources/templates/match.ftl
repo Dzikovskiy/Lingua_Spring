@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet">
@@ -25,12 +25,13 @@
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav" id="nav">
-                <a class="nav_link" href="profile.html">Profile</a>
-                <a class="nav_link" href="learn.html">Learn</a>
-                <a class="nav_link" href="test.html">Test</a>
-                <a class="nav_link current" href="match.html">Match</a>
-                <a class="nav_link logout" href="#">
-                        <span class="material-icons exit">
+                <a class="nav_link" href="/profile">Profile</a>
+                <a class="nav_link" href="/learn">Learn</a>
+                <a class="nav_link" href="/test">Test</a>
+                <a class="nav_link current" href="/match">Match</a>
+                <a class="nav_link logout" href="/logout">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <span class="material-icons exit">
                             exit_to_app
                         </span> Logout
                 </a>

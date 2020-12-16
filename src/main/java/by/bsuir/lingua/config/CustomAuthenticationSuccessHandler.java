@@ -15,17 +15,8 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException {
-//
-//        Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
-//
-//        if (roles.contains("DISPATCHER")) {
-//            httpServletResponse.sendRedirect("/dispatcherSellingPlan");
-//        }else if (roles.contains("FOREMAN")) {
-//            httpServletResponse.sendRedirect("/foremanOrdersMovement");
-//        }else if (roles.contains("TECH")) {
-//            httpServletResponse.sendRedirect("/tech");
-//        } else {
-//            httpServletResponse.sendRedirect("/tech"); // we dont have just "/" mapping  so redirect will be to technologist panel
-//        }
+
+        httpServletResponse.sendRedirect("/profile");
+
     }
 }

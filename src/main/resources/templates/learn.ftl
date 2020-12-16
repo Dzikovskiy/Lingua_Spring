@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet">
@@ -25,12 +25,13 @@
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav" id="nav">
-                <a class="nav_link" href="profile.html">Profile</a>
-                <a class="nav_link" href="learn.html">Learn</a>
-                <a class="nav_link current" href="test.html">Test</a>
-                <a class="nav_link" href="match.html">Match</a>
-                <a class="nav_link logout" href="#">
-                        <span class="material-icons exit">
+                <a class="nav_link" href="/profile">Profile</a>
+                <a class="nav_link current" href="/learn">Learn</a>
+                <a class="nav_link" href="/test">Test</a>
+                <a class="nav_link" href="/match">Match</a>
+                <a class="nav_link logout" href="/logout">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <span class="material-icons exit">
                             exit_to_app
                         </span> Logout
                 </a>
@@ -39,31 +40,29 @@
     </div>
 </header>
 <div class="page">
-    <section class="test">
-        <div class="counter">
-            4/20
-        </div>
-        <div class="test_group">
+    <section class="learn">
+        <div class="learn_group">
 
-            <div class="text_group test">
+            <div class="text_group">
                 <div class="word">
                     месца
                 </div>
+                <div class="translation">
+                    place
+                </div>
             </div>
-            <div class="buttons_group_test">
-                <div class="button_choose">
-                    <div class="button_choose_text">five</div>
+            <div class="buttons_group">
+                <div class="button_learn next">
+                        <span class="material-icons done">
+                            done
+                        </span>
                 </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">four</div>
-                </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">place</div>
-                </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">one</div>
-                </div>
+                <div class="button_learn question">
+                    <div class="question_btn_text">
+                        ?
+                    </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -72,7 +71,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="/static/assets/js/app.js"></script>
 </body>
 
 </html>
