@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-
+<#include "parts/security.ftl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://kit.fontawesome.com/54153b1a19.js" crossorigin="anonymous"></script>
     <title>Lingua</title>
-    <link rel="icon" href="assets/icon/ic_launcher.ico"/>
+    <link rel="icon" href="/static/assets/icon/ic_launcher.ico"/>
 </head>
 
 <body>
@@ -41,7 +41,11 @@
 </header>
 <div class="page">
     <section class="profile">
-        <div class="login_text">Vitali Dzikouski</div>
+        <div class="login_text">
+            <#if name?has_content>
+                ${name}<#else>User Name
+            </#if>
+        </div>
         <div class="box">
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Search word" name="word" id='word' required/>
@@ -133,6 +137,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>
+
+
 </body>
 
 </html>

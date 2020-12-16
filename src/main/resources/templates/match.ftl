@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://kit.fontawesome.com/54153b1a19.js" crossorigin="anonymous"></script>
     <title>Lingua</title>
-    <link rel="shortcut icon" href="assets/icon/ic_launcher.ico"/>
+    <link rel="icon" href="/static/assets/icon/ic_launcher.ico"/>
 </head>
 
 <body>

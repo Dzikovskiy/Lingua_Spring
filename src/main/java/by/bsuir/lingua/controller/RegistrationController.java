@@ -39,7 +39,13 @@ public class RegistrationController {
 
         User userFormDb = userRepository.findByUsername(userCredentials.getUsername());
         if (userFormDb != null) {
-            model.put("message", "User exists!");
+            model.put("message", "User exists by login!");
+            return "registration";
+
+        }
+        userFormDb = userRepository.findByEmail(userCredentials.getEmail());
+        if (userFormDb != null) {
+            model.put("message", "User exists by email!");
             return "registration";
 
         }
@@ -52,12 +58,6 @@ public class RegistrationController {
                 .roles(Set.of(Role.USER))
                 .build();
 
-//
-//        user.setActive(true);
-//
-//
-//        user.setRoles(Collections.singleton(Role.USER));
-//
         userRepository.save(user);
 
 
