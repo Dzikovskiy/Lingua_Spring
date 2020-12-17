@@ -57,7 +57,7 @@
                         <input type="hidden" name="word_id" value="${test_word_1.getId()}"/>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="button_choose">
-                            <div class="button_choose_text" onclick="document.getElementById('word_form1').submit();"
+                            <div class="button_choose_text unselectable" onclick="document.getElementById('word_form1').submit();"
                                  href="javascript:{}">${test_word_1.getLangSecond()}</div>
                         </div>
                     </form>
@@ -65,7 +65,7 @@
                         <input type="hidden" name="word_id" value="${test_word_2.getId()}"/>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="button_choose">
-                            <div class="button_choose_text" onclick="document.getElementById('word_form2').submit();"
+                            <div class="button_choose_text unselectable" onclick="document.getElementById('word_form2').submit();"
                                  href="javascript:{}">${test_word_2.getLangSecond()}</div>
                         </div>
                     </form>
@@ -73,7 +73,7 @@
                         <input type="hidden" name="word_id" value="${test_word_3.getId()}"/>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="button_choose">
-                            <div class="button_choose_text" onclick="document.getElementById('word_form3').submit();"
+                            <div class="button_choose_text unselectable" onclick="document.getElementById('word_form3').submit();"
                                  href="javascript:{}">${test_word_3.getLangSecond()}</div>
                         </div>
                     </form>
@@ -81,7 +81,7 @@
                         <input type="hidden" name="word_id" value="${test_word_4.getId()}"/>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="button_choose">
-                            <div class="button_choose_text" onclick="document.getElementById('word_form4').submit();"
+                            <div class="button_choose_text unselectable" onclick="document.getElementById('word_form4').submit();"
                                  href="javascript:{}">${test_word_4.getLangSecond()}</div>
                         </div>
                     </form>

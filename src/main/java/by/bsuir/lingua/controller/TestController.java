@@ -58,7 +58,9 @@ public class TestController {
             return "test";
         }
 
-        counter = wordsTested.size() + "/" + wordsLearned.size();
+        //counter = wordsTested.size() + "/" + wordsLearned.size();
+        counter = 1 + "/" + wordsLearned.size();
+
         model.addAttribute("counter", counter);
 
         Collections.shuffle(wordsLearned);
@@ -85,7 +87,6 @@ public class TestController {
 
     @PostMapping("/testWord")
     public String testWord(@AuthenticationPrincipal User user, @RequestParam Long word_id) {
-        //word stage что-то с add word
         if (word_id > 0) {
             Optional<Word> word = wordRepository.findById(word_id);
             if (word.isPresent()) {

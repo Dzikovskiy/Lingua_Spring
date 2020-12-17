@@ -41,8 +41,20 @@ public class User implements UserDetails {
 
     public void addWord(Word word, StageType stageType) {
         WordStage wordStage = new WordStage(this, word, stageType);
-        words.add(wordStage);
-        word.getUsers().add(wordStage);
+        //is word already present in list of words
+        boolean isPresent = false;
+
+        for (int i = 0; i < words.size(); i++) {
+            //if word in the words list, then it rewrite it with new stageType
+            if (words.get(i).getWord().getId().equals(word.getId())) {
+                isPresent = true;
+                words.set(i, wordStage);
+            }
+        }
+        if (!isPresent) {
+            words.add(wordStage);
+            word.getUsers().add(wordStage);
+        }
     }
 
     public boolean isAdmin() {
@@ -73,6 +85,5 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();
     }
-
 
 }

@@ -43,71 +43,67 @@
     <section class="match">
         <div class="button_match_group">
             <div class="button_match">
-                <div class=" button_match_text ">
+                <div class=" button_match_text unselectable">
+                    five
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    one
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    what
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    пяць
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    water
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    хлеб
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    вада
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
+                    чатыры
+                </div>
+            </div>
+            <div class="button_match ">
+                <div class="button_match_text unselectable">
                     four
                 </div>
             </div>
             <div class="button_match ">
-                <div class="button_match_text ">
-                    four
+                <div class="button_match_text unselectable">
+                    адзiн
                 </div>
             </div>
             <div class="button_match ">
-                <div class="button_match_text ">
-                    four
+                <div class="button_match_text unselectable">
+                    bread
                 </div>
             </div>
             <div class="button_match ">
-                <div class="button_match_text ">
-                    four
+                <div class="button_match_text unselectable">
+                    што
                 </div>
             </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text ">
-                    four
-                </div>
-            </div>
-
-
         </div>
-
     </section>
-
 
 </div>
 
