@@ -4,6 +4,7 @@ import by.bsuir.lingua.entity.User;
 import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.WordRepository;
+import by.bsuir.lingua.service.WordStageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ public class ProfileController {
     @Autowired
     private WordRepository wordRepository;
 
+    @Autowired
+    private WordStageService wordStageService;
+
     @GetMapping("/profile")
     public String getProfilePage(@AuthenticationPrincipal User user, Model model) {
         List<WordStage> wordStageList = user.getWords();
@@ -26,26 +30,12 @@ public class ProfileController {
         List<Word> wordsTested = new ArrayList<>();
         List<Word> wordsMatched = new ArrayList<>();
 
-        for (WordStage wordStage : wordStageList) {
-            switch (wordStage.getStageType()) {
-                case ACQUAINTED:
-                    wordsLearned.add(wordStage.getWord());
-                    break;
-                case TESTED:
-                    wordsTested.add(wordStage.getWord());
-                    break;
-                case MATCHED:
-                    wordsMatched.add(wordStage.getWord());
-                    break;
-                default:
-                    break;
-            }
-        }
+        wordStageService.fillWordsListsByStages(wordStageList, wordsLearned, wordsTested, wordsMatched);
 
 
-        model.addAttribute("wordsLearned",wordsLearned);
-        model.addAttribute("wordsTested",wordsTested);
-        model.addAttribute("wordsMatched",wordsMatched);
+        model.addAttribute("wordsLearned", wordsLearned);
+        model.addAttribute("wordsTested", wordsTested);
+        model.addAttribute("wordsMatched", wordsMatched);
         return "profile";
     }
 

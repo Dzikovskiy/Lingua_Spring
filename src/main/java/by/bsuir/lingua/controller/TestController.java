@@ -6,7 +6,7 @@ import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.UserRepository;
 import by.bsuir.lingua.repository.WordRepository;
-import by.bsuir.lingua.repository.WordStageRepository;
+import by.bsuir.lingua.service.WordStageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -28,10 +28,10 @@ public class TestController {
     private WordRepository wordRepository;
 
     @Autowired
-    private WordStageRepository wordStageRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private WordStageService wordStageService;
 
     @GetMapping
     public String getLearnPage(@AuthenticationPrincipal User user, Model model) {
@@ -41,18 +41,7 @@ public class TestController {
         List<Word> wordsTested = new ArrayList<>();
         List<Word> randomWordsList = wordRepository.findAll();
 
-        for (WordStage wordStage : wordStageList) {
-            switch (wordStage.getStageType()) {
-                case ACQUAINTED:
-                    wordsLearned.add(wordStage.getWord());
-                    break;
-                case TESTED:
-                    wordsTested.add(wordStage.getWord());
-                    break;
-                default:
-                    break;
-            }
-        }
+        wordStageService.fillWordsListsByStages(wordStageList, wordsLearned, wordsTested, new ArrayList<>());
 
         if (wordsLearned.isEmpty()) {
             return "test";
@@ -67,6 +56,10 @@ public class TestController {
         Collections.shuffle(randomWordsList);
 
         Word word = wordsLearned.get(0);
+
+        //remove word to test from random words to avoid duplicate
+        randomWordsList.removeIf(w -> w.getId().equals(word.getId()));
+
 
         randomWordsList.get(0).setId(-1L);
         randomWordsList.get(1).setId(-1L);
