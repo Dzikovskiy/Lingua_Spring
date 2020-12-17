@@ -1,6 +1,5 @@
 package by.bsuir.lingua.repository;
 
-import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
 import org.springframework.data.jpa.repository.JpaRepository;
 

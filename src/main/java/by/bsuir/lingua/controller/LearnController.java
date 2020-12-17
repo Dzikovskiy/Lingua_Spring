@@ -10,7 +10,6 @@ import by.bsuir.lingua.repository.WordStageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,23 +44,23 @@ public class LearnController {
             words.removeIf(word -> word.getId().equals(wordStage.getWord().getId()));
         }
 
-        if (!words.isEmpty()){//может быть ставить -1 если пусто
-        model.addAttribute("word",words.get(0));
+        if (!words.isEmpty()) {//может быть ставить -1 если пусто
+            model.addAttribute("word", words.get(0));
         }
 
         return "learn";
     }
 
     @PostMapping("/learnWord")
-    public String learnWord(@AuthenticationPrincipal User user, @RequestParam String word_id){
+    public String learnWord(@AuthenticationPrincipal User user, @RequestParam String word_id) {
         Optional<Word> word = wordRepository.findById(Long.valueOf(word_id));
-        if (word.isPresent()){
+        if (word.isPresent()) {
 //            WordStage wordStage = new WordStage();
 //            wordStage.setWord(word.get());
 //            wordStage.setUsers(user);
 //            wordStage.setStageType(StageType.ACQUAINTED);
 //            wordStageRepository.save(wordStage);
-            user.addWord(word.get(),StageType.ACQUAINTED);
+            user.addWord(word.get(), StageType.ACQUAINTED);
             userRepository.save(user);
         }
 

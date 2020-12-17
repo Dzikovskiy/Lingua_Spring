@@ -27,10 +27,11 @@ public class WordStage {
     public WordStage() {
 
     }
+
     public WordStage(User users, Word word, StageType stageType) {
         this.users = users;
         this.word = word;
         this.stageType = stageType;
-        this.id = new WordStageKey(users.getId(),word.getId());
+        this.id = new WordStageKey(users.getId(), word.getId());
     }
 }

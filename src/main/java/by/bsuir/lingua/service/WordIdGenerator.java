@@ -4,10 +4,6 @@ import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.repository.WordRepository;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
@@ -17,7 +13,7 @@ import java.util.List;
 public class WordIdGenerator implements IdentifierGenerator {
 
 
-    private WordRepository wordRepository ;
+    private WordRepository wordRepository;
 
     @Override
     public Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) {

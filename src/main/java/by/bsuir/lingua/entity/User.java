@@ -32,15 +32,15 @@ public class User implements UserDetails {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<WordStage> words = new ArrayList<>();;
+    private List<WordStage> words = new ArrayList<>();
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    public void addWord(Word word,StageType stageType){
-        WordStage wordStage = new WordStage(this,word,stageType);
+    public void addWord(Word word, StageType stageType) {
+        WordStage wordStage = new WordStage(this, word, stageType);
         words.add(wordStage);
         word.getUsers().add(wordStage);
     }
