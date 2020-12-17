@@ -41,30 +41,46 @@
 </header>
 <div class="page">
     <section class="learn">
-        <div class="learn_group">
+        <#if word??>
 
-            <div class="text_group">
-                <div class="word">
-                    месца
+            <div class="learn_group">
+
+                <div class="text_group">
+                    <div class="word">
+                        ${word.getLangFirst()}
+                    </div>
+                    <div class="translation" id="translation">
+                        ${word.getLangSecond()}
+                    </div>
                 </div>
-                <div class="translation">
-                    place
-                </div>
-            </div>
-            <div class="buttons_group">
-                <div class="button_learn next">
-                        <span class="material-icons done">
+
+                <div class="buttons_group">
+                    <form action="/learn/learnWord" id="word_form" method="post">
+                        <input type="hidden" name="word_id" value="${word.getId()}"/>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <div onclick="document.getElementById('word_form').submit();" href="javascript:{}" class="button_learn next" >
+                        <span class="material-icons done unselectable">
                             done
                         </span>
-                </div>
-                <div class="button_learn question">
-                    <div class="question_btn_text">
-                        ?
-                    </div>
+                        </div>
+                    </form>
+                    <div class="button_learn question unselectable" id="question_button_learn">
+                        <div class="question_btn_text">
+                            ?
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
+        <#else>
+            <div class="learn_group">
+                <div class="text_group">
+                    <div class="word">
+                        You don't have words to learn
+                    </div>
+                </div>
+            </div>
+        </#if>
     </section>
 
 

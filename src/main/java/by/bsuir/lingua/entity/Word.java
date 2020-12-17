@@ -1,6 +1,7 @@
 package by.bsuir.lingua.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,14 +15,16 @@ import java.util.List;
 @Builder
 public class Word {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GenericGenerator(name = "from_last_row_incremental_id", strategy =
+            "by.bsuir.lingua.service.WordIdGenerator")
+    @GeneratedValue(generator = "from_last_row_incremental_id")
     private Long id;
     private String langFirst;
     private String langSecond;
 
     @OneToMany(
             mappedBy = "word",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.MERGE,
             orphanRemoval = true
     )
     private List<WordStage> users;
