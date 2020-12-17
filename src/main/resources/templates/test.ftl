@@ -41,32 +41,61 @@
 </header>
 <div class="page">
     <section class="test">
-        <div class="counter">
-            4/20
-        </div>
-        <div class="test_group">
+        <#if word??>
+            <div class="counter">
+                ${counter}
+            </div>
+            <div class="test_group">
 
-            <div class="text_group test">
-                <div class="word">
-                    месца
+                <div class="text_group test">
+                    <div class="word">
+                        ${word.getLangFirst()}
+                    </div>
+                </div>
+                <div class="buttons_group_test">
+                    <form action="/test/testWord" id="word_form1" method="post">
+                        <input type="hidden" name="word_id" value="${test_word_1.getId()}"/>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <div class="button_choose">
+                            <div class="button_choose_text" onclick="document.getElementById('word_form1').submit();"
+                                 href="javascript:{}">${test_word_1.getLangSecond()}</div>
+                        </div>
+                    </form>
+                    <form action="/test/testWord" id="word_form2" method="post">
+                        <input type="hidden" name="word_id" value="${test_word_2.getId()}"/>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <div class="button_choose">
+                            <div class="button_choose_text" onclick="document.getElementById('word_form2').submit();"
+                                 href="javascript:{}">${test_word_2.getLangSecond()}</div>
+                        </div>
+                    </form>
+                    <form action="/test/testWord" id="word_form3" method="post">
+                        <input type="hidden" name="word_id" value="${test_word_3.getId()}"/>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <div class="button_choose">
+                            <div class="button_choose_text" onclick="document.getElementById('word_form3').submit();"
+                                 href="javascript:{}">${test_word_3.getLangSecond()}</div>
+                        </div>
+                    </form>
+                    <form action="/test/testWord" id="word_form4" method="post">
+                        <input type="hidden" name="word_id" value="${test_word_4.getId()}"/>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <div class="button_choose">
+                            <div class="button_choose_text" onclick="document.getElementById('word_form4').submit();"
+                                 href="javascript:{}">${test_word_4.getLangSecond()}</div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="buttons_group_test">
-                <div class="button_choose">
-                    <div class="button_choose_text">five</div>
+        <#else>
+            <div class="test_group">
+                <div class="text_group test">
+                    <div class="word">
+                        Learn some words to start here
+                    </div>
                 </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">four</div>
-                </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">place</div>
-                </div>
-                <div class="button_choose">
-                    <div class="button_choose_text">one</div>
-                </div>
-
             </div>
-        </div>
+        </#if>
     </section>
 
 

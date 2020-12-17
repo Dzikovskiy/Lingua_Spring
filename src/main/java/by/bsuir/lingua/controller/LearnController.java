@@ -52,14 +52,9 @@ public class LearnController {
     }
 
     @PostMapping("/learnWord")
-    public String learnWord(@AuthenticationPrincipal User user, @RequestParam String word_id) {
-        Optional<Word> word = wordRepository.findById(Long.valueOf(word_id));
+    public String learnWord(@AuthenticationPrincipal User user, @RequestParam Long word_id) {
+        Optional<Word> word = wordRepository.findById(word_id);
         if (word.isPresent()) {
-//            WordStage wordStage = new WordStage();
-//            wordStage.setWord(word.get());
-//            wordStage.setUsers(user);
-//            wordStage.setStageType(StageType.ACQUAINTED);
-//            wordStageRepository.save(wordStage);
             user.addWord(word.get(), StageType.ACQUAINTED);
             userRepository.save(user);
         }

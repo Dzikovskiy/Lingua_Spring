@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
 public class Word {
     @Id
     @GenericGenerator(name = "from_last_row_incremental_id", strategy =

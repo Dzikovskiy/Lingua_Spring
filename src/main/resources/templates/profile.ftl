@@ -72,76 +72,43 @@
             <tr>
                 <th>learned:</th>
             </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
-            <tr>
-                <td>search - шукаць</td>
-            </tr>
-            <tr>
-                <td>one - адзiн</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-
+            <#if wordsLearned?has_content>
+                <#list wordsLearned as word>
+                    <tr>
+                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                    </tr>
+                </#list>
+            </#if>
         </table>
         <table class="profile_table center" style="width:30%">
             <tr>
                 <th>tested:</th>
             </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
-            <tr>
-                <td>one - адзiн</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
+            <#if wordsTested?has_content>
+                <#list wordsTested as word>
+                    <tr>
+                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                    </tr>
+                </#list>
+            </#if>
         </table>
         <table class="profile_table right" style="width:30%">
             <tr>
                 <th>matched:</th>
             </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
-            <tr>
-                <td>one - адзiн</td>
-            </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
+            <#if wordsMatched?has_content>
+                <#list wordsMatched as word>
+                    <tr>
+                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                    </tr>
+                </#list>
+            </#if>
+
             <tr>
                 <td>one - адзiн</td>
             </tr>
             <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
-            </tr>
-            <tr>
-                <td>five - пяць</td>
+                <td>four - чатыры</td>
             </tr>
         </table>
     </section>
