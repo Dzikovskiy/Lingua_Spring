@@ -4,16 +4,22 @@
 // });
 
 
-$(".button_match").click(function (e) {
-    $(e.currentTarget).toggle();
-});
-
+/*
+learn page
+ */
 $(document).ready(function() {
     $("#translation").css({ opacity: 0 });
 });
 
 $("#question_button_learn").click(function (e) {
     $( "#translation" ).css({ opacity: 1 });
+});
+
+/*
+match
+*/
+$(".button_match").click(function (e) {
+    $(e.currentTarget).toggle();
 });
 
 

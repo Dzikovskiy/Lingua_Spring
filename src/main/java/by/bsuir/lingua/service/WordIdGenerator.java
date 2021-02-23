@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 public class WordIdGenerator implements IdentifierGenerator {
 
-
     private WordRepository wordRepository;
 
     @Override
