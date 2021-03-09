@@ -24,12 +24,12 @@
     <div class="container">
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
-            <nav class="nav" id="nav">
-                <a class="nav_link" href="/profile">Profile</a>
-                <a class="nav_link" href="/learn">Learn</a>
-                <a class="nav_link current" href="/test">Test</a>
-                <a class="nav_link" href="/match">Match</a>
-                <a class="nav_link logout" href="/logout">
+            <nav class="nav2" id="nav">
+                <a class="nav_link2" href="/profile">Profile</a>
+                <a class="nav_link2" href="/learn">Learn</a>
+                <a class="nav_link2 current" href="/test">Test</a>
+                <a class="nav_link2" href="/match">Match</a>
+                <a class="nav_link2 logout" href="/logout">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <span class="material-icons exit">
                             exit_to_app

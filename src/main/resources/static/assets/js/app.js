@@ -3,6 +3,15 @@
 //     $(this).toggle();
 // });
 
+//profile page
+
+$(function () {
+    $('#add-course-btn').on('click', function (event) {
+        event.preventDefault();
+        $('.addCourseModal #addCourseModal').modal();
+    })
+});
+
 
 /*
 learn page
