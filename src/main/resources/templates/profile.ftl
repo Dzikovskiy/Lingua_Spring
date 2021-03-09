@@ -2,6 +2,7 @@
 <html lang="en">
 <#include "parts/security.ftl">
 <#import "parts/addCourseModal.ftl" as acm>
+<#import "parts/addWordModal.ftl" as awm>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +32,7 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
 
-     <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
@@ -72,20 +73,20 @@
             <form action="/word/save" id="word_form" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                 <div class="box words_form">
-<#--                    <div class="form__group field">-->
-<#--                        <input type="input" class="form__field" placeholder="Word" name="word_1" id='word_1' required/>-->
-<#--                        <label for="word_1" class="form__label words">Word</label>-->
-<#--                        <input type="input" class="form__field" placeholder="Translation" name="word_2" id='word_2'-->
-<#--                               required/>-->
-<#--                        <label for="word_2" class="form__label words">Translation</label>-->
-<#--                    </div>-->
-<#--                    <a onclick="document.getElementById('word_form').submit();" href="javascript:{}"-->
-<#--                       class="search_button">add-->
-<#--                        word</a>-->
+                    <#--                    <div class="form__group field">-->
+                    <#--                        <input type="input" class="form__field" placeholder="Word" name="word_1" id='word_1' required/>-->
+                    <#--                        <label for="word_1" class="form__label words">Word</label>-->
+                    <#--                        <input type="input" class="form__field" placeholder="Translation" name="word_2" id='word_2'-->
+                    <#--                               required/>-->
+                    <#--                        <label for="word_2" class="form__label words">Translation</label>-->
+                    <#--                    </div>-->
+                    <#--                    <a onclick="document.getElementById('word_form').submit();" href="javascript:{}"-->
+                    <#--                       class="search_button">add-->
+                    <#--                        word</a>-->
 
                     <div class="link_box">
-                    <a href="#" class="search_button add-course-btn" id="add-course-btn">add course</a>
-                    <a href="#" class="search_button">add word</a>
+                        <a href="#" class="search_button add-course-btn" id="add-course-btn">add course</a>
+                        <a href="#" class="search_button add-word-btn" id="add-word-btn">add word</a>
                     </div>
                 </div>
 
@@ -135,25 +136,19 @@
                     </tr>
                 </#list>
             </#if>
-
-            <tr>
-                <td>one - адзiн</td>
-            </tr>
-            <tr>
-                <td>four - чатыры</td>
-            </tr>
         </table>
     </section>
 
     <div class="addCourseModal" id="addCourseModal">
         <@acm.modal/>
     </div>
+    <div class="addWordModal" id="addWordModal">
+        <@awm.modal/>
+    </div>
 
 </div>
 
-<#--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 <script src="assets/js/app.js"></script>
-
 
 </body>
 

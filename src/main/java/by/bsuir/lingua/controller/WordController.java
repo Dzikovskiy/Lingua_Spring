@@ -1,6 +1,8 @@
 package by.bsuir.lingua.controller;
 
+import by.bsuir.lingua.entity.Course;
 import by.bsuir.lingua.entity.Word;
+import by.bsuir.lingua.repository.CourseRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,26 +17,30 @@ public class WordController {
     @Autowired
     private WordRepository wordRepository;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
     @PostMapping("/save")
-    public String getProfilePage(@RequestParam String word_1, @RequestParam String word_2) {
-        if (word_1.length() < 1 || word_2.length() < 1) {
+    public String getProfilePage(@RequestParam String langFirst, @RequestParam String langSecond,@RequestParam Long course_id) {
+        if (langFirst.length() < 1 || langSecond.length() < 1) {
             return "profile";
         }
 
-        Word wordFromDb = wordRepository.findByLangFirst(word_1);
+        Word wordFromDb = wordRepository.findByLangFirst(langFirst);
         if (wordFromDb != null) {
             return "profile";
         }
 
-        wordFromDb = wordRepository.findByLangSecond(word_2);
+        wordFromDb = wordRepository.findByLangSecond(langSecond);
         if (wordFromDb != null) {
             return "profile";
         }
+        Course course = courseRepository.findById(course_id).get();
 
-        Word word = Word.builder().langFirst(word_1).langSecond(word_2).build();
+        Word word = Word.builder().langFirst(langFirst).langSecond(langSecond).course(course).build();
 
         wordRepository.save(word);
 
-        return "profile";
+        return "redirect:/profile";
     }
 }

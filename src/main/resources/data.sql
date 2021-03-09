@@ -10,29 +10,29 @@ VALUES ("vital.dz@mail.ru",
 INSERT INTO user_role (user_id,
                        roles)
 VALUES (1, "ADMIN");
-
-INSERT INTO courses (name)
-VALUES ("Digits");
-
-INSERT INTO word (lang_first, lang_second)
-VALUES ("пяць", "five")
-     , ("хлеб", "bread")
-     , ("вада", "water")
-     , ("замак", "castle")
-     , ("зямля", "earth")
-     , ("сонца", "sun")
-     , ("дзіця", "kid")
-     , ("кнiга", "book")
-     , ("тэлефон", "phone")
-     , ("будынак", "building")
-     , ("кот", "cat")
-     , ("сабака", "dog")
-     , ("дзесяць", "ten")
-     , ("дзевяць", "nine")
-     , ("восем", "eight")
-     , ("сем", "seven")
-     , ("шэсць", "four")
-     , ("чатыры", "four")
-     , ("тры", "three")
-     , ("два", "two")
-     , ("адзін", "one");
+--
+-- INSERT INTO courses (name)
+-- VALUES ("Digits");
+--
+-- INSERT INTO word (lang_first, lang_second)
+-- VALUES ("пяць", "five")
+--      , ("хлеб", "bread")
+--      , ("вада", "water")
+--      , ("замак", "castle")
+--      , ("зямля", "earth")
+--      , ("сонца", "sun")
+--      , ("дзіця", "kid")
+--      , ("кнiга", "book")
+--      , ("тэлефон", "phone")
+--      , ("будынак", "building")
+--      , ("кот", "cat")
+--      , ("сабака", "dog")
+--      , ("дзесяць", "ten")
+--      , ("дзевяць", "nine")
+--      , ("восем", "eight")
+--      , ("сем", "seven")
+--      , ("шэсць", "four")
+--      , ("чатыры", "four")
+--      , ("тры", "three")
+--      , ("два", "two")
+--      , ("адзін", "one");

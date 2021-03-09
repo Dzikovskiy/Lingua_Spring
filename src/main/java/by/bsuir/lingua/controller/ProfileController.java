@@ -37,14 +37,15 @@ public class ProfileController {
         List<Word> wordsTested = new ArrayList<>();
         List<Word> wordsMatched = new ArrayList<>();
         Iterable<Course> courses = courseRepository.findAll();
+        Iterable<Word> words = wordRepository.findAll();
 
         wordStageService.fillWordsListsByStages(wordStageList, wordsLearned, wordsTested, wordsMatched);
-
 
         model.addAttribute("wordsLearned", wordsLearned);
         model.addAttribute("wordsTested", wordsTested);
         model.addAttribute("wordsMatched", wordsMatched);
         model.addAttribute("courses", courses);
+        model.addAttribute("words", words);
         return "profile";
     }
 

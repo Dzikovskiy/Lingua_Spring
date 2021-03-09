@@ -12,6 +12,13 @@ $(function () {
     })
 });
 
+$(function () {
+    $('#add-word-btn').on('click', function (event) {
+        event.preventDefault();
+        $('.addWordModal #addWordModal').modal();
+    })
+});
+
 
 /*
 learn page
