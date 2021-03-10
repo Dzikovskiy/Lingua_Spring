@@ -19,6 +19,14 @@ $(function () {
     })
 });
 
+$(function () {
+    $('#join-course-btn').on('click', function (event) {
+        event.preventDefault();
+        $('.joinCourseModal #joinCourseModal').modal();
+    })
+});
+
+
 
 /*
 learn page

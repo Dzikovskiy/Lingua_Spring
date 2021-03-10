@@ -3,6 +3,8 @@
 <#include "parts/security.ftl">
 <#import "parts/addCourseModal.ftl" as acm>
 <#import "parts/addWordModal.ftl" as awm>
+<#import "parts/joinCourseModal.ftl" as jcm>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,27 +72,18 @@
             </#if>
         </div>
         <#if isAdmin>
-            <form action="/word/save" id="word_form" method="post">
-                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                <div class="box words_form">
-                    <#--                    <div class="form__group field">-->
-                    <#--                        <input type="input" class="form__field" placeholder="Word" name="word_1" id='word_1' required/>-->
-                    <#--                        <label for="word_1" class="form__label words">Word</label>-->
-                    <#--                        <input type="input" class="form__field" placeholder="Translation" name="word_2" id='word_2'-->
-                    <#--                               required/>-->
-                    <#--                        <label for="word_2" class="form__label words">Translation</label>-->
-                    <#--                    </div>-->
-                    <#--                    <a onclick="document.getElementById('word_form').submit();" href="javascript:{}"-->
-                    <#--                       class="search_button">add-->
-                    <#--                        word</a>-->
-
-                    <div class="link_box">
-                        <a href="#" class="search_button add-course-btn" id="add-course-btn">add course</a>
-                        <a href="#" class="search_button add-word-btn" id="add-word-btn">add word</a>
-                    </div>
+            <div class="box words_form">
+                <div class="link_box">
+                    <a href="#" class="search_button add-course-btn" id="add-course-btn">add course</a>
+                    <a href="#" class="search_button add-word-btn" id="add-word-btn">add word</a>
                 </div>
-
-            </form>
+            </div>
+        <#else>
+            <div class="box words_form">
+                <div class="link_box">
+                    <a href="#" class="search_button join-course-btn" id="join-course-btn">join curse</a>
+                </div>
+            </div>
         </#if>
         <div class="box">
             <div class="form__group field">
@@ -144,6 +137,9 @@
     </div>
     <div class="addWordModal" id="addWordModal">
         <@awm.modal/>
+    </div>
+    <div class="joinCourseModal" id="joinCourseModal">
+        <@jcm.modal/>
     </div>
 
 </div>
