@@ -11,9 +11,6 @@ import java.util.List;
 @Service
 public class WordStageService {
 
-    @Autowired
-    private WordRepository wordRepository;
-
     public void fillWordsListsByStages(List<WordStage> wordStageList, List<Word> wordsLearned, List<Word> wordsTested, List<Word> wordsMatched){
         for (WordStage wordStage : wordStageList) {
             switch (wordStage.getStageType()) {

@@ -5,10 +5,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity(name = "User")
 @Table(name = "users")
@@ -17,6 +14,8 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +24,12 @@ public class User implements UserDetails {
     private String password;
     private String email;
     private boolean active;
-
-
+    @ManyToMany
+    @JoinTable(
+            name = "course_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> joinedCourses;
     @OneToMany(
             mappedBy = "users",
             cascade = CascadeType.ALL,
@@ -55,6 +58,10 @@ public class User implements UserDetails {
             words.add(wordStage);
             word.getUsers().add(wordStage);
         }
+    }
+
+    public void addCourse(Course course) {
+        this.joinedCourses.add(course);
     }
 
     public boolean isAdmin() {

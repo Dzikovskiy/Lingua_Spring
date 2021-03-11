@@ -18,12 +18,13 @@
                         <div class="form-group row ml-1 mb-3">
                             <h6><label for="text" class="col-sm-2 col-form-label">Курс:</label></h6>
                             <div class="col-sm-3">
-                                <select name="course_id" id="course_id" class="custom-select">
+                                <select name="course_id" id="course_id" class="custom-select" required>
                                     <#if courses?has_content>
-                                        <option value="" selected>Выберите курс</option>
+                                        <option default selected>Выберите курс</option>
                                         <#list courses as course>
                                             <option id="course_id" value="${course.id}">${course.name}</option>
                                         </#list>
+
                                     </#if>
                                 </select>
                             </div>

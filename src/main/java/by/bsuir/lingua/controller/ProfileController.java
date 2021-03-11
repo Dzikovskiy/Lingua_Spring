@@ -7,6 +7,7 @@ import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.CourseRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@Log4j2
 public class ProfileController {
 
     @Autowired
@@ -46,6 +48,8 @@ public class ProfileController {
         model.addAttribute("wordsMatched", wordsMatched);
         model.addAttribute("courses", courses);
         model.addAttribute("words", words);
+
+       // log.info(user.getJoinedCourses());
         return "profile";
     }
 

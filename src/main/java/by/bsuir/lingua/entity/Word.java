@@ -28,5 +28,6 @@ public class Word {
     private List<WordStage> users;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
     private Course course;
 }
