@@ -4,7 +4,7 @@ package by.bsuir.lingua.controller;
 import by.bsuir.lingua.entity.Role;
 import by.bsuir.lingua.entity.User;
 import by.bsuir.lingua.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,12 +21,10 @@ import java.util.Map;
 import java.util.Set;
 
 @Controller
+@AllArgsConstructor
 public class RegistrationController {
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/registration")
     public String registration(Model model) {

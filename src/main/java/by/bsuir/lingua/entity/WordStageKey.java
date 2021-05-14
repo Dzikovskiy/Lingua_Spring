@@ -1,7 +1,8 @@
 package by.bsuir.lingua.entity;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

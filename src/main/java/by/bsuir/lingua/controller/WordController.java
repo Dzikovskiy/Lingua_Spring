@@ -4,7 +4,7 @@ import by.bsuir.lingua.entity.Course;
 import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.repository.CourseRepository;
 import by.bsuir.lingua.repository.WordRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/word")
+@AllArgsConstructor
 public class WordController {
-
-    @Autowired
-    private WordRepository wordRepository;
-
-    @Autowired
-    private CourseRepository courseRepository;
+    private final WordRepository wordRepository;
+    private final CourseRepository courseRepository;
 
     @PostMapping("/save")
     public String getProfilePage(@RequestParam String langFirst, @RequestParam String langSecond, @RequestParam Long course_id) {

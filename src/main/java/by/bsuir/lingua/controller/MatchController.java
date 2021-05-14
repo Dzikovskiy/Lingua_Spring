@@ -5,7 +5,7 @@ import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +17,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/match")
+@AllArgsConstructor
 public class MatchController {
-
-    @Autowired
-    private WordRepository wordRepository;
-
-    @Autowired
-    private WordStageService wordStageService;
-
+    private final WordRepository wordRepository;
+    private final WordStageService wordStageService;
 
     @GetMapping
     public String getMatchPage(@AuthenticationPrincipal User user, Model model) {

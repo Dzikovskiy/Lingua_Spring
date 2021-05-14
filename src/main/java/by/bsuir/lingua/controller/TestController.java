@@ -7,7 +7,7 @@ import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.UserRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,15 +23,11 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/test")
+@AllArgsConstructor
 public class TestController {
-    @Autowired
-    private WordRepository wordRepository;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private WordStageService wordStageService;
+    private final WordRepository wordRepository;
+    private final UserRepository userRepository;
+    private final WordStageService wordStageService;
 
     @GetMapping
     public String getLearnPage(@AuthenticationPrincipal User user, Model model) {

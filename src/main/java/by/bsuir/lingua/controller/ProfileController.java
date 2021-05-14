@@ -7,8 +7,8 @@ import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.CourseRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,16 +21,11 @@ import java.util.List;
 
 @Controller
 @Log4j2
+@AllArgsConstructor
 public class ProfileController {
-
-    @Autowired
-    private WordRepository wordRepository;
-
-    @Autowired
-    private CourseRepository courseRepository;
-
-    @Autowired
-    private WordStageService wordStageService;
+    private final WordRepository wordRepository;
+    private final CourseRepository courseRepository;
+    private final WordStageService wordStageService;
 
     @GetMapping("/profile")
     public String getProfilePage(@AuthenticationPrincipal User user, Model model) {

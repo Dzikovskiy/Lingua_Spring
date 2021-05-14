@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <div class="row justify-content-center mt-3">
-                                <button type="submit" class="btn btn-primary ">Добавить</button>
+                                <button type="submit" class="btn btn-primary ">add</button>
                             </div>
                         </div>
                     </form>
