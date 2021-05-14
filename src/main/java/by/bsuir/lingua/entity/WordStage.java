@@ -2,6 +2,7 @@ package by.bsuir.lingua.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class WordStage {
     @ManyToOne
     @MapsId("userId")
@@ -23,10 +25,6 @@ public class WordStage {
     private WordStageKey id;
     @Column(name = "stage")
     private StageType stageType;
-
-    public WordStage() {
-
-    }
 
     public WordStage(User users, Word word, StageType stageType) {
         this.users = users;

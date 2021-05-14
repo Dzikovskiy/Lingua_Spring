@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -28,7 +27,7 @@ public class MatchController {
 
 
     @GetMapping
-    public String getMatchPage(@AuthenticationPrincipal User user, Model model){
+    public String getMatchPage(@AuthenticationPrincipal User user, Model model) {
         List<WordStage> wordStageList = user.getWords();
         List<Word> wordsLearned = new ArrayList<>();
         List<Word> wordsTested = new ArrayList<>();

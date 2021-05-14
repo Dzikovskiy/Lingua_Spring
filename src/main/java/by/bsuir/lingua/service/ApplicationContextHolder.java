@@ -10,6 +10,14 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
 
+    public static <T> T getBean(Class<T> clazz) {
+        return applicationContext.getBean(clazz);
+    }
+
+    public static <T> T getBean(String qualifier, Class<T> clazz) {
+        return applicationContext.getBean(qualifier, clazz);
+    }
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         synchronized (this) {
@@ -17,13 +25,5 @@ public class ApplicationContextHolder implements ApplicationContextAware {
                 ApplicationContextHolder.applicationContext = applicationContext;
             }
         }
-    }
-
-    public static <T> T getBean(Class<T> clazz) {
-        return applicationContext.getBean(clazz);
-    }
-
-    public static <T> T getBean(String qualifier, Class<T> clazz) {
-        return applicationContext.getBean(qualifier, clazz);
     }
 }

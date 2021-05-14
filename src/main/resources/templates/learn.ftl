@@ -58,7 +58,8 @@
                     <form action="/learn/learnWord" id="word_form" method="post">
                         <input type="hidden" name="word_id" value="${word.getId()}"/>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                        <div onclick="document.getElementById('word_form').submit();" href="javascript:{}" class="button_learn next" >
+                        <div onclick="document.getElementById('word_form').submit();" href="javascript:{}"
+                             class="button_learn next">
                         <span class="material-icons done unselectable">
                             done
                         </span>

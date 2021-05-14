@@ -21,7 +21,7 @@ public class WordController {
     private CourseRepository courseRepository;
 
     @PostMapping("/save")
-    public String getProfilePage(@RequestParam String langFirst, @RequestParam String langSecond,@RequestParam Long course_id) {
+    public String getProfilePage(@RequestParam String langFirst, @RequestParam String langSecond, @RequestParam Long course_id) {
         if (langFirst.length() < 1 || langSecond.length() < 1) {
             return "profile";
         }

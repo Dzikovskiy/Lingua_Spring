@@ -49,12 +49,12 @@ public class ProfileController {
         model.addAttribute("courses", courses);
         model.addAttribute("words", words);
 
-       // log.info(user.getJoinedCourses());
+        // log.info(user.getJoinedCourses());
         return "profile";
     }
 
     @PostMapping("/saveCourse")
-    public String saveCourse(@RequestParam(name = "course_name") String courseName){
+    public String saveCourse(@RequestParam(name = "course_name") String courseName) {
         Course course = new Course();
         course.setName(courseName.trim().toLowerCase());
 
@@ -63,7 +63,7 @@ public class ProfileController {
     }
 
     @PostMapping("/deleteCourse")
-    public String deleteCourse(@RequestParam Long id){
+    public String deleteCourse(@RequestParam Long id) {
         courseRepository.deleteById(id);
 
         return "redirect:/profile";

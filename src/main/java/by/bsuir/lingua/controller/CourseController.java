@@ -29,7 +29,6 @@ public class CourseController {
         userRepository.save(user);
 
 
-
         return "profile";
     }
 }

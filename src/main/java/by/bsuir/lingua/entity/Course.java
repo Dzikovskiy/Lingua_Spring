@@ -1,7 +1,6 @@
 package by.bsuir.lingua.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -18,10 +17,9 @@ public class Course {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "course")
-    private Set <Word> words;
+    private Set<Word> words;
     @ManyToMany(mappedBy = "joinedCourses")
     private List<User> joinedUsers;
-
 
 
 }

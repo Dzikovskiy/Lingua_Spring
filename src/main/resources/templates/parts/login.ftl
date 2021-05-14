@@ -9,7 +9,8 @@
         <div class="form-group row justify-content-md-center">
             <label class="col-sm-2 col-form-label"> Пароль: </label>
             <div class="col-sm-3">
-                <input class="form-control" type="password" name="password" placeholder="Пароль" minlength="8" required/>
+                <input class="form-control" type="password" name="password" placeholder="Пароль" minlength="8"
+                       required/>
             </div>
         </div>
         <#if isRegisterForm>

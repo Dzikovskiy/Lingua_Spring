@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 @Controller
 @RequestMapping("/learn")
