@@ -12,13 +12,10 @@ import java.util.Set;
 
 @Entity(name = "User")
 @Table(name = "users")
-@Setter
-@Getter
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +24,7 @@ public class User implements UserDetails {
     private String password;
     private String email;
     private boolean active;
-    @ManyToMany
+    @ManyToMany//(cascade = CascadeType.ALL)
     @JoinTable(
             name = "course_user",
             joinColumns = @JoinColumn(name = "user_id"),

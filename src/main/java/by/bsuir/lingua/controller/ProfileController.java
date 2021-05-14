@@ -68,5 +68,4 @@ public class ProfileController {
 
         return "redirect:/profile";
     }
-
 }

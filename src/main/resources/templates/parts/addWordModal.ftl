@@ -6,7 +6,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addWordModalLabel">Add course</h5>
+                    <h5 class="modal-title" id="addWordModalLabel">Add word</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -16,27 +16,26 @@
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
                         <div class="form-group row ml-1 mb-3">
-                            <h6><label for="text" class="col-sm-2 col-form-label">Курс:</label></h6>
+                            <h6><label for="text" class="col-sm-2 col-form-label">Course:</label></h6>
                             <div class="col-sm-3">
                                 <select name="course_id" id="course_id" class="custom-select" required>
+                                    <option hidden disabled selected value>Chose course</option>
                                     <#if courses?has_content>
-                                        <option default selected>Выберите курс</option>
                                         <#list courses as course>
                                             <option id="course_id" value="${course.id}">${course.name}</option>
                                         </#list>
-
                                     </#if>
                                 </select>
                             </div>
-                            <h6><label for="text" class="col-sm-2 col-form-label">Бел:</label></h6>
+                            <h6><label for="text" class="col-sm-2 col-form-label">Bel:</label></h6>
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="langFirst" name="langFirst" value=""
-                                       placeholder="слово на беларуском" required>
+                                       placeholder="word on belarusian" required>
                             </div>
-                            <h6><label for="text" class="col-sm-2 col-form-label">Англ:</label></h6>
+                            <h6><label for="text" class="col-sm-2 col-form-label">Eng:</label></h6>
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="langSecond" name="langSecond" value=""
-                                       placeholder="слово на английском" required>
+                                       placeholder="word on english" required>
                             </div>
                         </div>
                         <div class="form-group mb-3">

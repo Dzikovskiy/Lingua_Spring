@@ -1,19 +1,14 @@
 package by.bsuir.lingua.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
 @AllArgsConstructor
 /* Special class for Composite Key */
 public class WordStageKey implements Serializable {

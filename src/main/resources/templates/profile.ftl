@@ -51,9 +51,11 @@
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
                 <a class="nav_link2 current2" href="/profile">Profile</a>
+                <#if !isAdmin>
                 <a class="nav_link2" href="/learn">Learn</a>
                 <a class="nav_link2" href="/test">Test</a>
                 <a class="nav_link2" href="/match">Match</a>
+                </#if>
                 <a class="nav_link2 logout" href="/logout">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <span class="material-icons exit">
@@ -74,8 +76,8 @@
         <#if isAdmin>
             <div class="box words_form">
                 <div class="link_box">
-                    <a href="#" class="search_button add-course-btn" id="add-course-btn">add course</a>
-                    <a href="#" class="search_button add-word-btn" id="add-word-btn">add word</a>
+                    <a href="#" class="search_button add-course-btn" id="add-course-btn">courses</a>
+                    <a href="#" class="search_button add-word-btn" id="add-word-btn">words</a>
                 </div>
             </div>
         <#else>

@@ -16,10 +16,12 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "course")
-    private Set<Word> words;
-    @ManyToMany(mappedBy = "joinedCourses")
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<Word> words;
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinTable(
+            name = "course_user",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> joinedUsers;
-
-
 }

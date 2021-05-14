@@ -7,12 +7,10 @@ import java.util.List;
 
 @Entity(name = "Word")
 @Table(name = "word")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EqualsAndHashCode
 public class Word {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
