@@ -4,6 +4,7 @@
 <#import "parts/addCourseModal.ftl" as acm>
 <#import "parts/addWordModal.ftl" as awm>
 <#import "parts/joinCourseModal.ftl" as jcm>
+<#import "parts/editProfileModal.ftl" as epm>
 
 <head>
     <meta charset="utf-8">
@@ -72,6 +73,7 @@
             <#if name?has_content>
                 ${name}<#else>User Name
             </#if>
+            <span id="profile-edit-btn" class="material-icons" style="cursor: pointer;font-size: 30px;">edit</span>
         </div>
         <#if isAdmin>
             <div class="box words_form">
@@ -142,6 +144,9 @@
     </div>
     <div class="joinCourseModal" id="joinCourseModal">
         <@jcm.modal/>
+    </div>
+    <div class="editProfileModal" id="editProfileModal">
+        <@epm.modal/>
     </div>
 
 </div>

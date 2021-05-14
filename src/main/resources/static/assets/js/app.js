@@ -26,6 +26,12 @@ $(function () {
     })
 });
 
+$(function () {
+    $('#profile-edit-btn').on('click', function (event) {
+        event.preventDefault();
+        $('.editProfileModal #editProfileModal').modal();
+    })
+});
 
 /*
 learn page

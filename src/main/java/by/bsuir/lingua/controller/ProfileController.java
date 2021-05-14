@@ -43,6 +43,7 @@ public class ProfileController {
         model.addAttribute("wordsMatched", wordsMatched);
         model.addAttribute("courses", courses);
         model.addAttribute("words", words);
+        model.addAttribute("email",user.getEmail());
 
         // log.info(user.getJoinedCourses());
         return "profile";
