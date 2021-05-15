@@ -7,6 +7,7 @@ import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.UserRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.repository.WordStageRepository;
+import by.bsuir.lingua.service.WordStageService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -26,13 +27,13 @@ public class LearnController {
     private final WordRepository wordRepository;
     private final WordStageRepository wordStageRepository;
     private final UserRepository userRepository;
+    private final WordStageService wordStageService;
 
     @GetMapping
     public String getLearnPage(@AuthenticationPrincipal User user, Model model) {
-
         List<WordStage> wordStageList = wordStageRepository.findAll();
 
-        List<Word> words = wordRepository.findAll();
+        List<Word> words = wordStageService.getWordsFromUserCourses(userRepository.findByEmail(user.getEmail()));
         //remove all wordStages that not belong to current user
         wordStageList.removeIf(wordStage -> !wordStage.getUsers().getId().equals(user.getId()));
         //remove all words that already was studied by user
@@ -40,7 +41,7 @@ public class LearnController {
             words.removeIf(word -> word.getId().equals(wordStage.getWord().getId()));
         }
 
-        if (!words.isEmpty()) {//может быть ставить -1 если пусто
+        if (!words.isEmpty()) {
             model.addAttribute("word", words.get(0));
         }
 

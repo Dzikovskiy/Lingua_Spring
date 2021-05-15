@@ -16,29 +16,29 @@ INSERT INTO user_role (user_id,
                        roles)
 VALUES (1, "ADMIN"),
        (2, "USER");
---
--- INSERT INTO courses (name)
--- VALUES ("Digits");
---
--- INSERT INTO word (lang_first, lang_second)
--- VALUES ("пяць", "five")
---      , ("хлеб", "bread")
---      , ("вада", "water")
---      , ("замак", "castle")
---      , ("зямля", "earth")
---      , ("сонца", "sun")
---      , ("дзіця", "kid")
---      , ("кнiга", "book")
---      , ("тэлефон", "phone")
---      , ("будынак", "building")
---      , ("кот", "cat")
---      , ("сабака", "dog")
---      , ("дзесяць", "ten")
---      , ("дзевяць", "nine")
---      , ("восем", "eight")
---      , ("сем", "seven")
---      , ("шэсць", "four")
---      , ("чатыры", "four")
---      , ("тры", "three")
---      , ("два", "two")
---      , ("адзін", "one");
+
+INSERT INTO courses (name)
+VALUES ("Starter pack");
+
+INSERT INTO word (lang_first, lang_second,course_id)
+VALUES ("пяць", "five",1)
+     , ("хлеб", "bread",1)
+     , ("вада", "water",1)
+     , ("замак", "castle",1)
+     , ("зямля", "earth",1)
+     , ("сонца", "sun",1)
+     , ("дзіця", "kid",1)
+     , ("кнiга", "book",1)
+     , ("тэлефон", "phone",1)
+     , ("будынак", "building",1)
+     , ("кот", "cat",1)
+     , ("сабака", "dog",1)
+     , ("дзесяць", "ten",1)
+     , ("дзевяць", "nine",1)
+     , ("восем", "eight",1)
+     , ("сем", "seven",1)
+     , ("шэсць", "six",1)
+     , ("чатыры", "four",1)
+     , ("тры", "three",1)
+     , ("два", "two",1)
+     , ("адзін", "one",1);
