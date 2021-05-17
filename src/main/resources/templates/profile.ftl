@@ -47,16 +47,17 @@
 
 <!-- Header -->
 <header class="header" id="header">
-    <div class="container">
+    <div class="container2">
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
-                <a class="nav_link2 current2" href="/profile">Profile</a>
+
                 <#if !isAdmin>
                     <a class="nav_link2" href="/learn">Learn</a>
                     <a class="nav_link2" href="/test">Test</a>
                     <a class="nav_link2" href="/match">Match</a>
                 </#if>
+                <a class="nav_link2 current2 profile" href="/profile">Profile</a>
                 <a class="nav_link2 logout" href="/logout">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <span class="material-icons exit">

@@ -21,19 +21,19 @@
 
 <!-- Header -->
 <header class="header" id="header">
-    <div class="container">
-        <div class="header_inner">
+    <div class="container2">
+        <div class="header_inner unselectable" >
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
-                <a class="nav_link2" href="/profile">Profile</a>
                 <a class="nav_link2" href="/learn">Learn</a>
                 <a class="nav_link2" href="/test">Test</a>
                 <a class="nav_link2 current" href="/match">Match</a>
+                <a class="nav_link2 profile" href="/profile">Profile</a>
                 <a class="nav_link2 logout" href="/logout">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <span class="material-icons exit">
                             exit_to_app
-                        </span> Logout
+                    </span> Logout
                 </a>
             </nav>
         </div>
@@ -41,79 +41,90 @@
 </header>
 <div class="page">
     <section class="match">
-        <#--        <#if word??>-->
-        <div class="button_match_group">
-            <div class="button_match">
-                <div class=" button_match_text unselectable">
-                    five
+        <#if words_match??>
+            <div class="button_match_group">
+                <#list words_match as word>
+                    <div class="button_match">
+                        <div class=" button_match_text unselectable">
+                            ${word.langFirst}
+                        </div>
+                    </div>
+                    <div class="button_match">
+                        <div class=" button_match_text unselectable">
+                            ${word.langSecond}
+                        </div>
+                    </div>
+                </#list>
+<#--                <div class="button_match">-->
+<#--                    <div class=" button_match_text unselectable">-->
+<#--                        five-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        one-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        what-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        пяць-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        water-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        хлеб-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        вада-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        чатыры-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        four-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        адзiн-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        bread-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--                <div class="button_match ">-->
+<#--                    <div class="button_match_text unselectable">-->
+<#--                        што-->
+<#--                    </div>-->
+<#--                </div>-->
+            </div>
+        <#else >
+            <div class="test_group">
+                <div class="text_group test">
+                    <div class="word">
+                        Test some words to start here
+                    </div>
                 </div>
             </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    one
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    what
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    пяць
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    water
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    хлеб
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    вада
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    чатыры
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    four
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    адзiн
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    bread
-                </div>
-            </div>
-            <div class="button_match ">
-                <div class="button_match_text unselectable">
-                    што
-                </div>
-            </div>
-        </div>
-        <#--        <#else >-->
-        <#--            <div class="test_group">-->
-        <#--                <div class="text_group test">-->
-        <#--                    <div class="word">-->
-        <#--                        Test some words to start here-->
-        <#--                    </div>-->
-        <#--                </div>-->
-        <#--            </div>-->
-        <#--        </#if>-->
-
+        </#if>
     </section>
 
 </div>

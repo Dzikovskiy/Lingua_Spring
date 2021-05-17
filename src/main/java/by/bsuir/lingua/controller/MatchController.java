@@ -36,6 +36,13 @@ public class MatchController {
         if (wordsTested.isEmpty()) {
             return "match";
         }
+        List<Word> words = new ArrayList<>();
+
+        for (short i = 0; i < wordsTested.size() && i < 6; i++) {
+            words.add(wordsTested.get(i));
+        }
+
+        model.addAttribute("words_match", words);
 
 //        model.addAttribute("counter", counter);
 //

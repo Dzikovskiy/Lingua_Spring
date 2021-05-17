@@ -116,7 +116,7 @@ section.match {
 
 /*Container*/
 
-.container {
+.container2 {
     width: 100%;
     max-width: 1230px;
     padding: 0 15px;
@@ -169,8 +169,14 @@ section.match {
 }
 
 .nav_link2.logout {
-    margin-left: 280px;
+    margin-left: 20px;
 }
+
+.nav_link2.profile {
+    margin-left: 240px;
+}
+
+
 
 .material-icons.exit {
     vertical-align: -3px;

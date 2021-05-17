@@ -65,6 +65,7 @@ public class UserController {
     @PostMapping("/saveProfile")
     public String saveEditedUser(User editedUser,@AuthenticationPrincipal User userPrincipal) {
 
+        //todo добавить проверку есть ли такой эмэил у другого пользователя
         userPrincipal.setEmail(editedUser.getEmail());
         userPrincipal.setUsername(editedUser.getUsername());
         userPrincipal.setPassword(passwordEncoder.encode(editedUser.getPassword()));

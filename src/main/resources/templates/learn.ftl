@@ -21,14 +21,14 @@
 
 <!-- Header -->
 <header class="header" id="header">
-    <div class="container">
+    <div class="container2">
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
-                <a class="nav_link2" href="/profile">Profile</a>
                 <a class="nav_link2 current" href="/learn">Learn</a>
                 <a class="nav_link2" href="/test">Test</a>
                 <a class="nav_link2" href="/match">Match</a>
+                <a class="nav_link2 profile" href="/profile">Profile</a>
                 <a class="nav_link2 logout" href="/logout">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     <span class="material-icons exit">
@@ -49,7 +49,7 @@
                     <div class="word">
                         ${word.getLangFirst()}
                     </div>
-                    <div class="translation" id="translation">
+                    <div class="translation" id="translation" style="opacity: 0">
                         ${word.getLangSecond()}
                     </div>
                 </div>
@@ -83,8 +83,6 @@
             </div>
         </#if>
     </section>
-
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
