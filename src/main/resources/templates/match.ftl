@@ -22,7 +22,7 @@
 <!-- Header -->
 <header class="header" id="header">
     <div class="container2">
-        <div class="header_inner unselectable" >
+        <div class="header_inner unselectable">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
                 <a class="nav_link2" href="/learn">Review</a>
@@ -55,66 +55,66 @@
                         </div>
                     </div>
                 </#list>
-<#--                <div class="button_match">-->
-<#--                    <div class=" button_match_text unselectable">-->
-<#--                        five-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        one-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        what-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        пяць-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        water-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        хлеб-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        вада-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        чатыры-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        four-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        адзiн-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        bread-->
-<#--                    </div>-->
-<#--                </div>-->
-<#--                <div class="button_match ">-->
-<#--                    <div class="button_match_text unselectable">-->
-<#--                        што-->
-<#--                    </div>-->
-<#--                </div>-->
+                <#--                <div class="button_match">-->
+                <#--                    <div class=" button_match_text unselectable">-->
+                <#--                        five-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        one-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        what-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        пяць-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        water-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        хлеб-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        вада-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        чатыры-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        four-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        адзiн-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        bread-->
+                <#--                    </div>-->
+                <#--                </div>-->
+                <#--                <div class="button_match ">-->
+                <#--                    <div class="button_match_text unselectable">-->
+                <#--                        што-->
+                <#--                    </div>-->
+                <#--                </div>-->
             </div>
         <#else >
             <div class="test_group">

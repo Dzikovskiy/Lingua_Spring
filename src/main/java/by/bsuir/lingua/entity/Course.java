@@ -17,6 +17,7 @@ public class Course {
     private String name;
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Word> words;
+    @ToString.Exclude
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
             name = "course_user",

@@ -15,17 +15,17 @@
                     <form method="post" action="/joinCourse">
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="form-group  my-3">
-                                <h6><label for="text" class="col-sm-2 col-form-label">Course:</label></h6>
-                                <div class="col-sm-8 mx-auto">
-                                    <select name="course_id" id="course_id" class="custom-select">
-                                        <#if courses?has_content>
-                                            <option default selected>Choose course</option>
-                                            <#list courses as course>
-                                                <option id="course_id" value="${course.id}">${course.name}</option>
-                                            </#list>
-                                        </#if>
-                                    </select>
-                                </div>
+                            <h6><label for="text" class="col-sm-2 col-form-label">Course:</label></h6>
+                            <div class="col-sm-8 mx-auto">
+                                <select name="course_id" id="course_id" class="custom-select">
+                                    <#if courses?has_content>
+                                        <option default selected>Choose course</option>
+                                        <#list courses as course>
+                                            <option id="course_id" value="${course.id}">${course.name}</option>
+                                        </#list>
+                                    </#if>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group mt-5">
                             <div class="row justify-content-center mt-3">

@@ -1,9 +1,6 @@
 package by.bsuir.lingua.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -27,6 +24,7 @@ public class User implements UserDetails {
     private String password;
     private String email;
     private boolean active;
+    @ToString.Exclude
     @ManyToMany//(cascade = CascadeType.ALL)
     @JoinTable(
             name = "course_user",
