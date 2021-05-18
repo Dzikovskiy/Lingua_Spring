@@ -2,7 +2,7 @@
 
     <div class="modal fade" id="joinCourseModal" tabindex="-1" role="dialog" aria-labelledby="joinCourseModalLabel"
          aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog " role="document">
             <div class="modal-content">
 
                 <div class="modal-header">
@@ -14,24 +14,22 @@
                 <div class="modal-body ">
                     <form method="post" action="/joinCourse">
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                        <div class="form-group row ml-1 mb-3">
-                            <div class="col-sm-12">
+                        <div class="form-group  my-3">
                                 <h6><label for="text" class="col-sm-2 col-form-label">Course:</label></h6>
-                                <div class="col-sm-4">
+                                <div class="col-sm-8 mx-auto">
                                     <select name="course_id" id="course_id" class="custom-select">
                                         <#if courses?has_content>
-                                            <option default selected>Выберите курс</option>
+                                            <option default selected>Choose course</option>
                                             <#list courses as course>
                                                 <option id="course_id" value="${course.id}">${course.name}</option>
                                             </#list>
                                         </#if>
                                     </select>
                                 </div>
-                                <div class="col-sm-2">
-                                    <div class="row justify-content-center mt-3">
-                                        <button type="submit" class="btn btn-primary ">Join</button>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="form-group mt-5">
+                            <div class="row justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary ">Join</button>
                             </div>
                         </div>
                     </form>

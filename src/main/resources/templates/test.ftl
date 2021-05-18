@@ -25,8 +25,8 @@
         <div class="header_inner">
             <div class="header_logo" data-scroll="#intro">Lingua</div>
             <nav class="nav2" id="nav">
-                <a class="nav_link2" href="/learn">Learn</a>
-                <a class="nav_link2 current" href="/test">Test</a>
+                <a class="nav_link2" href="/learn">Review</a>
+                <a class="nav_link2 current2" href="/test">Test</a>
                 <a class="nav_link2" href="/match">Match</a>
                 <a class="nav_link2 profile" href="/profile">Profile</a>
                 <a class="nav_link2 logout" href="/logout">

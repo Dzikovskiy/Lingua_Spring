@@ -24,6 +24,6 @@ public class CourseController {
         user.addCourse(courseRepository.getOne(courseId));
         userRepository.save(user);
 
-        return "profile";
+        return "redirect:/profile";
     }
 }

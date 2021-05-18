@@ -64,7 +64,6 @@ public class UserController {
 
     @PostMapping("/saveProfile")
     public String saveEditedUser(User editedUser,@AuthenticationPrincipal User userPrincipal) {
-
         //todo добавить проверку есть ли такой эмэил у другого пользователя
         userPrincipal.setEmail(editedUser.getEmail());
         userPrincipal.setUsername(editedUser.getUsername());
@@ -73,7 +72,6 @@ public class UserController {
         userRepository.save(userPrincipal);
 
         return "redirect:/profile";
-
     }
 
     @GetMapping("/logout")

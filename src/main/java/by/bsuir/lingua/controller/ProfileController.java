@@ -5,6 +5,7 @@ import by.bsuir.lingua.entity.User;
 import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
 import by.bsuir.lingua.repository.CourseRepository;
+import by.bsuir.lingua.repository.UserRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,7 @@ public class ProfileController {
     private final WordRepository wordRepository;
     private final CourseRepository courseRepository;
     private final WordStageService wordStageService;
+    private final UserRepository userRepository;
 
     @GetMapping("/profile")
     public String getProfilePage(@AuthenticationPrincipal User user, Model model) {
@@ -35,6 +37,7 @@ public class ProfileController {
         List<Word> wordsMatched = new ArrayList<>();
         Iterable<Course> courses = courseRepository.findAll();
         Iterable<Word> words = wordRepository.findAll();
+        List<Course> userCourses = userRepository.findByEmail(user.getEmail()).getJoinedCourses();
 
         wordStageService.fillWordsListsByStages(wordStageList, wordsLearned, wordsTested, wordsMatched);
 
@@ -43,9 +46,9 @@ public class ProfileController {
         model.addAttribute("wordsMatched", wordsMatched);
         model.addAttribute("courses", courses);
         model.addAttribute("words", words);
-        model.addAttribute("email",user.getEmail());
+        model.addAttribute("email", user.getEmail());
+        model.addAttribute("userCourses", userCourses);
 
-        // log.info(user.getJoinedCourses());
         return "profile";
     }
 

@@ -33,6 +33,13 @@ $(function () {
     })
 });
 
+$(function () {
+    $('#user-courses-btn').on('click', function (event) {
+        event.preventDefault();
+        $('.userCoursesModal #userCoursesModal').modal();
+    })
+});
+
 /*
 learn page
  */

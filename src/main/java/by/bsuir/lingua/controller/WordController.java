@@ -18,19 +18,19 @@ public class WordController {
     private final CourseRepository courseRepository;
 
     @PostMapping("/save")
-    public String getProfilePage(@RequestParam String langFirst, @RequestParam String langSecond, @RequestParam Long course_id) {
+    public String saveWord(@RequestParam String langFirst, @RequestParam String langSecond, @RequestParam Long course_id) {
         if (langFirst.length() < 1 || langSecond.length() < 1) {
-            return "profile";
+            return "redirect:/profile";
         }
 
         Word wordFromDb = wordRepository.findByLangFirst(langFirst);
         if (wordFromDb != null) {
-            return "profile";
+            return "redirect:/profile";
         }
 
         wordFromDb = wordRepository.findByLangSecond(langSecond);
         if (wordFromDb != null) {
-            return "profile";
+            return "redirect:/profile";
         }
         Course course = courseRepository.findById(course_id).get();
 
@@ -38,6 +38,12 @@ public class WordController {
 
         wordRepository.save(word);
 
+        return "redirect:/profile";
+    }
+
+    @PostMapping("/delete")
+    public String deleteWord(@RequestParam Long id) {
+        wordRepository.deleteById(id);
         return "redirect:/profile";
     }
 }

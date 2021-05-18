@@ -5,6 +5,7 @@
 <#import "parts/addWordModal.ftl" as awm>
 <#import "parts/joinCourseModal.ftl" as jcm>
 <#import "parts/editProfileModal.ftl" as epm>
+<#import "parts/userCoursesModal.ftl" as ucm>
 
 <head>
     <meta charset="utf-8">
@@ -53,7 +54,7 @@
             <nav class="nav2" id="nav">
 
                 <#if !isAdmin>
-                    <a class="nav_link2" href="/learn">Learn</a>
+                    <a class="nav_link2" href="/learn">Review</a>
                     <a class="nav_link2" href="/test">Test</a>
                     <a class="nav_link2" href="/match">Match</a>
                 </#if>
@@ -87,6 +88,7 @@
             <div class="box words_form">
                 <div class="link_box">
                     <a href="#" class="search_button join-course-btn" id="join-course-btn">join curse</a>
+                    <a href="#" class="search_button user-courses-btn" id="user-courses-btn">your curses</a>
                 </div>
             </div>
         </#if>
@@ -99,43 +101,46 @@
             <a href="#" class="search_button">search</a>
 
         </div>
-        <table class="profile_table" style="width:30%">
-            <tr>
-                <th>learned:</th>
-            </tr>
-            <#if wordsLearned?has_content>
-                <#list wordsLearned as word>
-                    <tr>
-                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
-                    </tr>
-                </#list>
-            </#if>
-        </table>
-        <table class="profile_table center" style="width:30%">
-            <tr>
-                <th>tested:</th>
-            </tr>
-            <#if wordsTested?has_content>
-                <#list wordsTested as word>
-                    <tr>
-                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
-                    </tr>
-                </#list>
-            </#if>
-        </table>
-        <table class="profile_table right" style="width:30%">
-            <tr>
-                <th>matched:</th>
-            </tr>
-            <#if wordsMatched?has_content>
-                <#list wordsMatched as word>
-                    <tr>
-                        <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
-                    </tr>
-                </#list>
-            </#if>
-        </table>
+        <#if !isAdmin>
+            <table class="profile_table" style="width:30%">
+                <tr>
+                    <th>reviewed:</th>
+                </tr>
+                <#if wordsLearned?has_content>
+                    <#list wordsLearned as word>
+                        <tr>
+                            <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                        </tr>
+                    </#list>
+                </#if>
+            </table>
+            <table class="profile_table center" style="width:30%">
+                <tr>
+                    <th>tested:</th>
+                </tr>
+                <#if wordsTested?has_content>
+                    <#list wordsTested as word>
+                        <tr>
+                            <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                        </tr>
+                    </#list>
+                </#if>
+            </table>
+            <table class="profile_table right" style="width:30%">
+                <tr>
+                    <th>matched:</th>
+                </tr>
+                <#if wordsMatched?has_content>
+                    <#list wordsMatched as word>
+                        <tr>
+                            <td>${word.getLangFirst()} - ${word.getLangSecond()}</td>
+                        </tr>
+                    </#list>
+                </#if>
+            </table>
+        </#if>
     </section>
+
 
     <div class="addCourseModal" id="addCourseModal">
         <@acm.modal/>
@@ -148,6 +153,9 @@
     </div>
     <div class="editProfileModal" id="editProfileModal">
         <@epm.modal/>
+    </div>
+    <div class="userCoursesModal" id="userCoursesModal">
+        <@ucm.modal/>
     </div>
 
 </div>
