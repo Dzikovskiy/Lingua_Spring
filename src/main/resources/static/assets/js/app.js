@@ -5,6 +5,7 @@
 
 //profile page
 
+//modals
 $(function () {
     $('#add-course-btn').on('click', function (event) {
         event.preventDefault();
@@ -38,6 +39,22 @@ $(function () {
         event.preventDefault();
         $('.userCoursesModal #userCoursesModal').modal();
     })
+});
+
+//search
+$(document).ready(function(){
+    $("#word-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#word_table_1 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        $("#word_table_2 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        $("#word_table_3 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 });
 
 /*

@@ -94,7 +94,8 @@
         </#if>
         <div class="box">
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Search word" name="word" id='word' required/>
+                <input type="input" class="form__field" placeholder="Search word" name="word-input" id="word-input"
+                       required/>
                 <label for="word" class="form__label">Search word</label>
 
             </div>
@@ -102,10 +103,13 @@
 
         </div>
         <#if !isAdmin>
-            <table class="profile_table" style="width:30%">
+            <table class="profile_table"  style="width:30%">
+                <thead>
                 <tr>
                     <th>reviewed:</th>
                 </tr>
+                </thead>
+                <tbody id="word_table_1">
                 <#if wordsLearned?has_content>
                     <#list wordsLearned as word>
                         <tr>
@@ -113,8 +117,9 @@
                         </tr>
                     </#list>
                 </#if>
+                </tbody>
             </table>
-            <table class="profile_table center" style="width:30%">
+            <table class="profile_table center" id="word_table_2" style="width:30%">
                 <tr>
                     <th>tested:</th>
                 </tr>
@@ -126,7 +131,7 @@
                     </#list>
                 </#if>
             </table>
-            <table class="profile_table right" style="width:30%">
+            <table class="profile_table right" id="word_table_3" style="width:30%">
                 <tr>
                     <th>matched:</th>
                 </tr>
