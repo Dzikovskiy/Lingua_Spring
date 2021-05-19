@@ -103,7 +103,7 @@
 
         </div>
         <#if !isAdmin>
-            <table class="profile_table"  style="width:30%">
+            <table class="profile_table" style="width:30%">
                 <thead>
                 <tr>
                     <th>reviewed:</th>

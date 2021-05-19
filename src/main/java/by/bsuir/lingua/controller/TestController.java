@@ -4,7 +4,6 @@ import by.bsuir.lingua.entity.StageType;
 import by.bsuir.lingua.entity.User;
 import by.bsuir.lingua.entity.Word;
 import by.bsuir.lingua.entity.WordStage;
-import by.bsuir.lingua.repository.CourseRepository;
 import by.bsuir.lingua.repository.UserRepository;
 import by.bsuir.lingua.repository.WordRepository;
 import by.bsuir.lingua.service.WordStageService;
@@ -29,7 +28,6 @@ public class TestController {
     private final WordRepository wordRepository;
     private final UserRepository userRepository;
     private final WordStageService wordStageService;
-    private final CourseRepository courseRepository;
 
     @GetMapping
     public String getLearnPage(@AuthenticationPrincipal User user, Model model) {

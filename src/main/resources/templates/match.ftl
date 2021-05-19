@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="_csrf" content="${_csrf.token}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -44,77 +45,12 @@
         <#if words_match??>
             <div class="button_match_group">
                 <#list words_match as word>
-                    <div class="button_match">
-                        <div class=" button_match_text unselectable">
-                            ${word.langFirst}
-                        </div>
-                    </div>
-                    <div class="button_match">
-                        <div class=" button_match_text unselectable">
-                            ${word.langSecond}
+                    <div class="button_match" id="ID-${word.id}" value="${word.word}" data-id="${word.id}">
+                        <div class="button_match_text unselectable">
+                            ${word.word}
                         </div>
                     </div>
                 </#list>
-                <#--                <div class="button_match">-->
-                <#--                    <div class=" button_match_text unselectable">-->
-                <#--                        five-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        one-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        what-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        пяць-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        water-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        хлеб-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        вада-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        чатыры-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        four-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        адзiн-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        bread-->
-                <#--                    </div>-->
-                <#--                </div>-->
-                <#--                <div class="button_match ">-->
-                <#--                    <div class="button_match_text unselectable">-->
-                <#--                        што-->
-                <#--                    </div>-->
-                <#--                </div>-->
             </div>
         <#else >
             <div class="test_group">

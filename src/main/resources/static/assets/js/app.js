@@ -42,16 +42,16 @@ $(function () {
 });
 
 //search
-$(document).ready(function(){
-    $("#word-input").on("keyup", function() {
+$(document).ready(function () {
+    $("#word-input").on("keyup", function () {
         var value = $(this).val().toLowerCase();
-        $("#word_table_1 tr").filter(function() {
+        $("#word_table_1 tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
-        $("#word_table_2 tr").filter(function() {
+        $("#word_table_2 tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
-        $("#word_table_3 tr").filter(function() {
+        $("#word_table_3 tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
@@ -71,11 +71,38 @@ $("#question_button_learn").click(function (e) {
 /*
 match
 */
-$(".button_match").click(function (e) {
-    $(e.currentTarget).toggle();
+// $(".button_match").click(function (e) {
+//     $(e.currentTarget).toggle();
+// });
+let lastClickedId = -1;
+let lastClickedValue = '';
+
+$(document).ready(function () {
+    $(".button_match").click(function (event) {
+        if (lastClickedId == $(this).attr('data-id') && lastClickedValue != $(this).attr('value')) {
+            // alert(event.target.id + ' last:' + lastClickedId);
+
+            var token = $("meta[name='_csrf']").attr("content");
+
+            $.ajax({
+                type: "POST",
+                url: "/match",
+                data: "id=" + $(this).attr('data-id'),
+                headers: {"X-CSRF-TOKEN": token},
+                success: function (response) {
+                    $(`div[data-id=${lastClickedId}]`).each(function () {
+                        $(this).hide();
+                    });
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+
+        } else {
+            lastClickedId = $(this).attr('data-id');
+
+        }
+    });
 });
 
-
-// $(document).on('click', '.button_match', function() {
-//     $(this).hide(); // hides only the element that was clicked with the class .the-class  
-// })
