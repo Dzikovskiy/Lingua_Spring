@@ -5,7 +5,9 @@
 <#import "parts/addWordModal.ftl" as awm>
 <#import "parts/joinCourseModal.ftl" as jcm>
 <#import "parts/editProfileModal.ftl" as epm>
+<#import "parts/editUserProfileModal.ftl" as eupm>
 <#import "parts/userCoursesModal.ftl" as ucm>
+<#import "parts/editUsersModal.ftl" as eum>
 
 <head>
     <meta charset="utf-8">
@@ -76,12 +78,19 @@
                 ${name}<#else>User Name
             </#if>
             <span id="profile-edit-btn" class="material-icons" style="cursor: pointer;font-size: 30px;">edit</span>
+            <#if !isAdmin>
+              | level 1
+            <div class="progress" style="margin: 3%; height: 4px;">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            </#if>
         </div>
         <#if isAdmin>
-            <div class="box words_form">
+            <div class="box words_form admin">
                 <div class="link_box">
                     <a href="#" class="search_button add-course-btn" id="add-course-btn">courses</a>
                     <a href="#" class="search_button add-word-btn" id="add-word-btn">words</a>
+                    <a href="#" class="search_button edit-user-btn" id="edit-user-btn">users</a>
                 </div>
             </div>
         <#else>
@@ -159,9 +168,15 @@
     <div class="editProfileModal" id="editProfileModal">
         <@epm.modal/>
     </div>
+    <@eum.modal/>
+    <@eupm.modal/>
+
     <div class="userCoursesModal" id="userCoursesModal">
         <@ucm.modal/>
     </div>
+
+
+
 
 </div>
 

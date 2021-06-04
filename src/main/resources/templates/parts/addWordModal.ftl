@@ -63,7 +63,7 @@
                                     <td>
                                         <form method="post" action="/word/delete">
                                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                            <input type="text" class="form-control" id="id" name="id"
+                                            <input type="text" class="form-control" id="id-${word.id}" name="id"
                                                    value="${word.id}" readonly hidden>
                                             <button type="submit" class="btn btn-outline-danger btn-sm">ꟷ</button>
                                         </form>

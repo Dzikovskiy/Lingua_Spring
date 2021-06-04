@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -63,7 +64,7 @@ public class UserController {
     }
 
     @PostMapping("/saveProfile")
-    public String saveEditedUser(User editedUser, @AuthenticationPrincipal User userPrincipal) {
+    public String saveEditedProfile(User editedUser, @AuthenticationPrincipal User userPrincipal) {
         //todo добавить проверку есть ли такой эмэил у другого пользователя
         userPrincipal.setEmail(editedUser.getEmail());
         userPrincipal.setUsername(editedUser.getUsername());
@@ -74,6 +75,23 @@ public class UserController {
         return "redirect:/profile";
     }
 
+    @PostMapping("/editUser")
+    public String saveEditedUser(User editedUser) {
+        //todo добавить проверку есть ли такой эмэил у другого пользователя
+        return userRepository.findById(editedUser.getId()).map(userFromDb -> {
+                    userFromDb.setPassword(passwordEncoder.encode(editedUser.getPassword()));
+                    userFromDb.setUsername(editedUser.getUsername());
+                    userFromDb.setEmail(editedUser.getEmail());
+                    userRepository.save(userFromDb);
+
+                    return "redirect:/profile";
+                }
+        ).orElseGet(() -> {
+            userRepository.save(editedUser);
+            return "redirect:/profile";
+        });
+    }
+
     @GetMapping("/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -81,6 +99,13 @@ public class UserController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout";
+    }
+
+    @PostMapping("/deleteUser")
+    public String deleteUserById(@RequestParam Long id) {
+        userRepository.deleteById(id);
+
+        return "redirect:/profile";
     }
 
 }

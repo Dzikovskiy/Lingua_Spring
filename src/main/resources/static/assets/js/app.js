@@ -34,10 +34,50 @@ $(function () {
     })
 });
 
+// $(document).ready(function () {
+//     $(".edit-user-modal-btn").click(function (event) {
+//         event.preventDefault();
+//         $('.editUserProfileModal #editUserProfileModal').modal();
+//     });
+// });
+
+// $(document).on('click', ".edit-user-modal-btn", function (event) {
+//     event.preventDefault();
+//     $('.editUserProfileModal #editUserProfileModal').modal();
+// });
+
+// $("#editUsersModal").on('click', '.edit-user-modal-btn', function (event) {
+//     event.preventDefault();
+//     $('.editUserProfileModal #editUserProfileModal').modal();
+// });
+//
+
+let userIdForEdit = 0;
+
+
+
+$("#editUserProfileModal").on('show.bs.modal', function (e) {
+    $("#editUsersModal").modal("hide");
+});
+
+// $(function () {
+//     $('.edit-user-modal-btn').on('click', function (event) {
+//         event.preventDefault();
+//         $('.editUserProfileModal #editUserProfileModal').modal();
+//     })
+// });
+
 $(function () {
     $('#user-courses-btn').on('click', function (event) {
         event.preventDefault();
         $('.userCoursesModal #userCoursesModal').modal();
+    })
+});
+
+$(function () {
+    $('#edit-user-btn').on('click', function (event) {
+        event.preventDefault();
+        $('#editUsersModal').modal();
     })
 });
 

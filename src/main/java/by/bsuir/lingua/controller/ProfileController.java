@@ -38,6 +38,7 @@ public class ProfileController {
         Iterable<Course> courses = courseRepository.findAll();
         Iterable<Word> words = wordRepository.findAll();
         List<Course> userCourses = userRepository.findByEmail(user.getEmail()).getJoinedCourses();
+        List<User> users = userRepository.findAll();
 
         wordStageService.fillWordsListsByStages(wordStageList, wordsLearned, wordsTested, wordsMatched);
 
@@ -48,6 +49,7 @@ public class ProfileController {
         model.addAttribute("words", words);
         model.addAttribute("email", user.getEmail());
         model.addAttribute("userCourses", userCourses);
+        model.addAttribute("users",users);
 
         return "profile";
     }

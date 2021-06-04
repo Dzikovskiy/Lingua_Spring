@@ -10,6 +10,7 @@ option[default] {
     display: none;
 }
 
+
 .unselectable {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Chrome/Safari/Opera */
@@ -417,6 +418,16 @@ section.match {
     z-index: 5;
 }
 
+.box.words_form.admin {
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    transform: translate(-10%, -90%);
+    padding: 70px 100px;
+    margin-bottom: 10%;
+    z-index: 5;
+}
+
 .link_box {
     display: flex;
     flex-direction: column;
@@ -478,6 +489,14 @@ section.match {
     font-size: 1rem;
     color: #ffffff;
     font-weight: 500;
+}
+
+.material-icons.edit-user::before{
+    color: #59CD90;
+}
+
+.material-icons.edit-user:hover::before{
+    color: #2b7146;
 }
 
 
