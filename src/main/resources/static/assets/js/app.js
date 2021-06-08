@@ -53,19 +53,26 @@ $(function () {
 //
 
 let userIdForEdit = 0;
-
+let userNameForEdit = "";
+let userEmailForEdit = "";
 
 
 $("#editUserProfileModal").on('show.bs.modal', function (e) {
+    $(".user-input-edit-id").val(userIdForEdit);
+    $(".user-input-edit-name").val(userNameForEdit);
+    $(".user-input-edit-email").val(userEmailForEdit);
     $("#editUsersModal").modal("hide");
+
 });
 
-// $(function () {
-//     $('.edit-user-modal-btn').on('click', function (event) {
-//         event.preventDefault();
-//         $('.editUserProfileModal #editUserProfileModal').modal();
-//     })
-// });
+$(function () {
+    $('.btn.btn-outline-primary.edit-user-modal-btn').on('click', function (event) {
+        event.preventDefault();
+        userIdForEdit = $(this).attr('data-id');
+        userNameForEdit = $(this).attr('data-username');
+        userEmailForEdit = $(this).attr('data-email');
+    })
+});
 
 $(function () {
     $('#user-courses-btn').on('click', function (event) {

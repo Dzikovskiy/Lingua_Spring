@@ -14,18 +14,18 @@
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         <div class="form-group mb-3">
                             <label for="text" class="col-form-label">Id</label>
-                            <input class="form-control" type="text" name="id" placeholder="id"
+                            <input class="form-control user-input-edit-id" type="text" name="id" placeholder="id"
                                    value="" required/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="text" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="username" name="username"
+                            <input type="text" class="form-control user-input-edit-name" id="username" name="username"
                                    value=""
                                    placeholder="enter your name" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="text" class="col-form-label">Email</label>
-                            <input class="form-control" type="email" name="email" placeholder="email"
+                            <input class="form-control user-input-edit-email" type="email" name="email" placeholder="email"
                                    value="" required/>
                         </div>
                         <div class="form-group mb-3">

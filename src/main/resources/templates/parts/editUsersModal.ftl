@@ -30,7 +30,8 @@
                                     <td>${u.id}</td>
                                     <td>${u.username}</td>
                                     <td>${u.email}</td>
-                                    <td><a data-toggle="modal" href="#editUserProfileModal" class="btn btn-outline-primary" data-id="${u.id}">edit</a>
+                                    <td><a data-toggle="modal" href="#editUserProfileModal" class="btn btn-outline-primary edit-user-modal-btn"
+                                           data-id="${u.id}" data-username="${u.username}" data-email="${u.email}">edit</a>
 <#--                                        <button type="button" class="btn btn-outline-primary edit-user-modal-btn">edit</button>-->
                                     </td>
                                     <td>
